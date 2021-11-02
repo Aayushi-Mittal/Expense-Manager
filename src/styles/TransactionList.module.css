@@ -1,0 +1,13 @@
+.credit{
+    background:var(--mid1);
+    color:var(--light1);
+    padding:20px;
+    margin:10px 0px;
+}
+
+.debit{
+    background:var(--mid2);
+    color:var(--light1);
+    padding:20px;
+    margin:10px 0px;
+}

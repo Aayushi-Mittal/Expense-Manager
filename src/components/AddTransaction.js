@@ -1,5 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
+// import { Redirect } from 'react-router-dom';
+// import { useToasts } from 'react-toast-notifications'
 import styles from '../styles/AddTransaction.module.css'
 
 const AddTransaction = ({id, addTransaction}) => {
@@ -8,9 +10,11 @@ const AddTransaction = ({id, addTransaction}) => {
     const [amount, setAmount] = useState(0)
     const [date, setDate] = useState("")
     const [type, setType] = useState("")
+    // const { addToast } = useToasts()
 
     const onSubmit = (event) => {
         event.preventDefault();
+        (type==='Credit') ? setAmount(Math.abs(amount)) : setAmount((-1)*(Math.abs(amount)));
         const newTransaction = {
             id: id,
             text: text,
@@ -18,11 +22,17 @@ const AddTransaction = ({id, addTransaction}) => {
             date: date,
             type : type
         }
+        console.log(newTransaction);
+        // addToast("Transaction Added successfully!", {
+        //     appearance: 'success',
+        //     autoDismiss: true,
+        // });
         addTransaction(newTransaction)
         setText("");
         setAmount(0);
         setDate("");
         setType("");
+        // return <Redirect to="/" />;
     }
 
     return (
