@@ -1,9 +1,9 @@
 import { combineReducers, createStore } from "redux";
-import { rootReducer } from "../reducers/rootReducer";
+import rootReducer from "../reducer/rootReducer.js";
 const reducer = combineReducers({
-  expenses: rootReducer,
+  transactions: rootReducer,
 });
-const initialState = {};
-const store = createStore(reducer, initialState);
+// const initialState = {};
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;

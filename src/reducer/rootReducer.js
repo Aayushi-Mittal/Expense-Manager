@@ -1,4 +1,4 @@
-import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "./actions"
+import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "../actions"
 
 const initialState = {
     transactions: [],
