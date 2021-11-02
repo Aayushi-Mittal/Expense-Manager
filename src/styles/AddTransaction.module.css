@@ -1,0 +1,52 @@
+.formContainer{
+    display:flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.addTransaction{
+    background:var(--light2);
+    padding:16vh 20vw;
+}
+
+.field{
+    color:var(--dark1);
+    margin:10px 0px;
+    font-weight:600;
+}
+
+.field input{
+    border:none;
+    padding:5px;
+    border-radius:5px;
+    width:100%;
+    outline:none;
+    text-align: center;
+}
+.field h2{
+    margin-bottom:20px;
+    font-size:30px;
+}
+.field input[type="radio"]{
+    width:auto;
+}
+
+.red{
+    color:var(--mid2);
+}
+.green{
+    color:var(--mid1);
+}
+
+.submitBtn{
+    padding:5px;
+    outline:none;
+    border-radius:5px;
+    width:100%;
+    margin:20px 0px;
+    background:var(--dark2);
+    color:var(--light1);
+}
