@@ -14,7 +14,9 @@ const AddTransaction = ({id, addTransaction}) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        (type==='Credit') ? setAmount(Math.abs(amount)) : setAmount((-1)*(Math.abs(amount)));
+        console.log("newTransaction");
+        if (type==='Credit') setAmount(Math.abs(amount)) 
+        else setAmount((-1)*(Math.abs(amount)));
         const newTransaction = {
             id: id,
             text: text,
@@ -37,7 +39,7 @@ const AddTransaction = ({id, addTransaction}) => {
 
     return (
         <div className={styles.formContainer}>
-            <form className={styles.addTransaction}>
+            <form className={styles.addTransaction} onSubmit={onSubmit}>
                 <div className={styles.field}>
                     <h2>Add a Transaction</h2>
                 </div>
@@ -65,7 +67,7 @@ const AddTransaction = ({id, addTransaction}) => {
                     <input value="Credit" onChange={(event) => setType(event.target.value)} type="radio" id="Credit" name="transaction"/>
                     <label className={styles.green}>Credit</label>
                 </div>
-                <button onSubmit={onSubmit} type="submit" className={styles.submitBtn}>Add Transaction</button>
+                <button type="submit" className={styles.submitBtn}>Add Transaction</button>
             </form>
         </div>
     )

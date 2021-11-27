@@ -5,6 +5,8 @@
     --light2:#E6F9AF;
     --mid1:#8BBEB2;
     --mid2:#ED8D93;
+    --expenseWidth:40%;
+    --incomeWidth:40%;
 }
 
 body{
@@ -20,7 +22,7 @@ body{
 
 .footer{
     bottom:0px;
-    position:fixed;
+    position:sticky;
     width:100%;
 }
 
@@ -57,4 +59,65 @@ body{
 .fofheading h1{
     margin:0px;
     font-size:15vw;
+}
+
+.homeContainer{
+    display:flex;
+    flex-direction:column;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.summary{
+    padding:2vh 10vw;
+    margin:10px 0px;
+}
+
+.creditDebitCard{
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    min-width:250px;
+    flex-wrap:nowrap;
+    width:60vw;
+}
+
+.creditContainer{
+    background-color: var(--mid1);
+    padding:10px;
+    width: var(--incomeWidth);
+    word-wrap: normal;
+}
+.debitContainer{
+    background-color: var(--mid2);
+    padding:10px;
+    width: var(--expenseWidth);
+    word-wrap: normal;
+}
+
+.credit,.debit{
+    font-size:20px;
+    font-weight:bolder;
+}
+
+.balanceContainer{
+    font-size:22px;
+    color:white;
+    font-weight:bolder;
+    padding:20px;
+    /* border:2px solid var(--dark2); */
+    border-radius:20px;
+    margin:10px auto;
+    background-color: var(--dark2);
+    max-width:50vw;
+}
+
+.balance{
+    font-size:35px;
+    font-weight:bolder;
 }

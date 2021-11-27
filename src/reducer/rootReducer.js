@@ -1,54 +1,29 @@
-import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "../actions"
-
-const initialList = () => {
-    localStorage.setItem("transactionsList", []);
-    const list = localStorage.getItem("transactionsList");
-    let transactions = [];
-    if (list) {
-      transactions = JSON.parse(list);
-    }
-    return transactions;
-};
+// import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "../actions"
+import { ADD_TRANSACTION, DELETE_TRANSACTION } from "../actions"
 
 const initialState = {
-    transactions: initialList(),
-    query:"",
+    transactions: [],
 }
 
 const rootReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_TRANSACTION: {
-            localStorage.setItem(
-              "transactionsList",
-              JSON.stringify([action.payload, ...state.transactions])
-            );
+        case ADD_TRANSACTION:
             return {
                 ...state,
-                transactions: [action.payload, ...state.transactions],
-                query: "",
+                transactions: [action.payload, ...state.transactions]
             }
-        }
-        case DELETE_TRANSACTION: {   
-            const { data } = action;
-            const updatedList = state.transactions.filter(
-                (item) => item.id !== data.id
-            );
-            localStorage.setItem("transactionList", JSON.stringify(updatedList));
+        case DELETE_TRANSACTION:
             return {
                 ...state,
-                transactions: updatedList,
-                query: ""
+                transactions: state.transactions.filter((transaction) => transaction.id !== action.payload)
             }
-        }
-        case SEARCH_TRANSACTION: {
-            const { query } = action;
-            return {
-                ...state,
-                query
-            }
-        }
+        // case SEARCH_TRANSACTION:
+        //     return {
+        //         ...state,
+        //         transactions: state.transactions.filter((transaction) => (transaction.id).includes(action.payload))
+        //     }
         default: return state
     }
 }
 
-export default rootReducer;
+export default rootReducer; 

@@ -1,6 +1,6 @@
 import React from 'react';
-// import Transaction from './Transaction';
-// import styles from '../styles/TransactionList.module.css';
+import Transaction from './Transaction';
+import styles from '../styles/TransactionList.module.css';
 
 const TransactionList = ({ transactions, deleteTransaction }) => {
     
@@ -9,20 +9,27 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
     // })
     
     return (
-        <div>
+        <div className={styles.listContainer}>
             <h3>Transactions</h3>
-            <input type="search" />
-            <ul>
-                {/* {transactions.map((transaction) => {
-                return (
-                    <Transaction
-                        key={transaction.id}
-                        transaction={transaction}
-                        deleteTransaction={(id) => deleteTransaction(id)}
-                    />
-                );
-                })} */}
-            </ul>
+            <input type="search" className={styles.searchBar} placeholder="Search Transaction..."/>
+            <div>
+                {(transactions.length>0) ? (
+                    transactions.map((transaction) => {
+                    return (
+                        <Transaction
+                            key={transaction.id}
+                            transaction={transaction}
+                            deleteTransaction={(id) => deleteTransaction(id)}
+                        />
+                    );})
+                    ) : (
+                        <div className={styles.noTransactions}>
+                            <p>No Transactions are present at the moment.</p>
+                            <img src="https://imgur.com/dYuJLtj.png" width="250px" />
+                        </div>
+                    )
+                }
+            </div>
         </div>
     )
 }
