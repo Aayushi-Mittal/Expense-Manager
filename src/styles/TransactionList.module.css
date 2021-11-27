@@ -68,3 +68,8 @@
     margin:10px 0px;
     border-radius:5px;
 }
+
+.transactionListTitle{
+    color:var(--dark1);
+    font-size:25px;
+}

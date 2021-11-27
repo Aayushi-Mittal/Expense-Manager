@@ -11,6 +11,7 @@ export class Home extends Component {
         const { transactions, deleteTransaction } = this.props;
         return (
             <div className={styles.homeContainer}>
+                <h1 className={styles.title}>Expense Manager</h1>
                 <Balance transactions={transactions}/>
                 <TransactionList transactions={transactions} deleteTransaction={(id) => deleteTransaction(id)}/>
             </div>

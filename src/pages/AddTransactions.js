@@ -7,10 +7,12 @@ export class AddTransactions extends Component {
     render() {
         const { transactions, addTransaction } = this.props;
         return (
-            <AddTransaction
-            addTransaction={(transaction) => addTransaction(transaction)}
-            id={transactions[0] ? transactions[0].id + 1 : 1}
-            />
+            <div>
+                <AddTransaction
+                addTransaction={(transaction) => addTransaction(transaction)}
+                id={transactions[0] ? transactions[0].id + 1 : 1}
+                />
+            </div>
         )
     }
 }

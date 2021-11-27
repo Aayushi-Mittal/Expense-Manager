@@ -39,10 +39,8 @@ const AddTransaction = ({id, addTransaction}) => {
 
     return (
         <div className={styles.formContainer}>
+            <h1 className={styles.title}>Add a Transaction</h1>
             <form className={styles.addTransaction} onSubmit={onSubmit}>
-                <div className={styles.field}>
-                    <h2>Add a Transaction</h2>
-                </div>
                 <div className={styles.field}>
                     <label>Transaction Detail:</label>
                     <br/>

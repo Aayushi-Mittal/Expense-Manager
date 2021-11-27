@@ -5,8 +5,8 @@
     --light2:#E6F9AF;
     --mid1:#8BBEB2;
     --mid2:#ED8D93;
-    --expenseWidth:40%;
-    --incomeWidth:40%;
+    --expenseWidth:50%;
+    --incomeWidth:50%;
 }
 
 body{
@@ -120,4 +120,10 @@ body{
 .balance{
     font-size:35px;
     font-weight:bolder;
+}
+
+.title{
+    color:var(--dark1);
+    font-size:40px;
+    word-wrap:normal;
 }

@@ -10,7 +10,7 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
     
     return (
         <div className={styles.listContainer}>
-            <h3>Transactions</h3>
+            <h3 class={styles.transactionListTitle}>Transactions</h3>
             <input type="search" className={styles.searchBar} placeholder="Search Transaction..."/>
             <div>
                 {(transactions.length>0) ? (
