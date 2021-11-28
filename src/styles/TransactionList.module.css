@@ -1,0 +1,75 @@
+.listContainer{
+    background:var(--light2);
+    padding:2vh 10vw;
+    margin-bottom:10px;
+}
+
+.transaction{
+    display:flex;
+    justify-content: space-between;
+    min-width:200px;
+    flex-wrap:wrap;
+}
+
+.transactionTitle{
+    font-size:16px;
+    font-weight:bold;
+    text-align:left;
+    word-wrap: normal;
+}
+
+.transactionDate{
+    font-size:10px;
+    text-align:left;
+}
+
+.transactionAmount{
+    font-size:20px;
+    font-weight:bold;
+    text-align:right;
+}
+
+.deleteBtn{
+    padding:5px;
+    outline:none;
+    border-radius:5px;
+    margin: 0px 10px;
+    background:var(--dark2);
+    color:var(--light1);
+}
+
+.noTransactions{
+    padding:20px;
+    background:white;
+    border-radius:20px;
+    color:var(--dark1);
+    margin:10px;
+}
+
+.searchBar{
+    padding:5px;
+    min-width:250px;
+    border:none;
+    outline:none;
+}
+
+.credit{
+    background:var(--mid1);
+    color:var(--light1);
+    padding:10px;
+    margin:10px 0px;
+    border-radius:5px;
+}
+
+.debit{
+    background:var(--mid2);
+    color:var(--light1);
+    padding:10px;
+    margin:10px 0px;
+    border-radius:5px;
+}
+
+.transactionListTitle{
+    color:var(--dark1);
+    font-size:25px;
+}

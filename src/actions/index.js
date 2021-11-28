@@ -1,6 +1,6 @@
 export const ADD_TRANSACTION = "ADD_TRANSACTION"
 export const DELETE_TRANSACTION = "DELETE_TRANSACTION"
-export const SEARCH_TRANSACTION = "SEARCH_TRANSACTION"
+// export const SEARCH_TRANSACTION = "SEARCH_TRANSACTION"
 
 export const addTransaction = (transaction) => ({
     type: ADD_TRANSACTION,
@@ -12,7 +12,7 @@ export const deleteTransaction = (transactionId) => ({
     payload: transactionId
 })
 
-export const searchTransaction = (query) => ({
-    type: SEARCH_TRANSACTION,
-    payload: query
-})
+// export const searchTransaction = (query) => ({
+//     type: SEARCH_TRANSACTION,
+//     payload: query
+// })

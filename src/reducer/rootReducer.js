@@ -1,8 +1,8 @@
-import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "../actions"
+// import { ADD_TRANSACTION, DELETE_TRANSACTION, SEARCH_TRANSACTION } from "../actions"
+import { ADD_TRANSACTION, DELETE_TRANSACTION } from "../actions"
 
 const initialState = {
     transactions: [],
-    query:""
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -17,13 +17,13 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 transactions: state.transactions.filter((transaction) => transaction.id !== action.payload)
             }
-        case SEARCH_TRANSACTION:
-            return {
-                ...state,
-                transactions: state.transactions.filter((transaction) => (transaction.id).includes(action.payload))
-            }
+        // case SEARCH_TRANSACTION:
+        //     return {
+        //         ...state,
+        //         transactions: state.transactions.filter((transaction) => (transaction.id).includes(action.payload))
+        //     }
         default: return state
     }
 }
 
-export default rootReducer;
+export default rootReducer; 

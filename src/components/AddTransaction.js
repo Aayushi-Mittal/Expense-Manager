@@ -1,5 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
+// import { Redirect } from 'react-router-dom';
+// import { useToasts } from 'react-toast-notifications'
 import styles from '../styles/AddTransaction.module.css'
 
 const AddTransaction = ({id, addTransaction}) => {
@@ -8,9 +10,13 @@ const AddTransaction = ({id, addTransaction}) => {
     const [amount, setAmount] = useState(0)
     const [date, setDate] = useState("")
     const [type, setType] = useState("")
+    // const { addToast } = useToasts()
 
     const onSubmit = (event) => {
         event.preventDefault();
+        console.log("newTransaction");
+        if (type==='Credit') setAmount(Math.abs(amount)) 
+        else setAmount((-1)*(Math.abs(amount)));
         const newTransaction = {
             id: id,
             text: text,
@@ -18,19 +24,23 @@ const AddTransaction = ({id, addTransaction}) => {
             date: date,
             type : type
         }
+        console.log(newTransaction);
+        // addToast("Transaction Added successfully!", {
+        //     appearance: 'success',
+        //     autoDismiss: true,
+        // });
         addTransaction(newTransaction)
         setText("");
         setAmount(0);
         setDate("");
         setType("");
+        // return <Redirect to="/" />;
     }
 
     return (
         <div className={styles.formContainer}>
-            <form className={styles.addTransaction}>
-                <div className={styles.field}>
-                    <h2>Add a Transaction</h2>
-                </div>
+            <h1 className={styles.title}>Add a Transaction</h1>
+            <form className={styles.addTransaction} onSubmit={onSubmit}>
                 <div className={styles.field}>
                     <label>Transaction Detail:</label>
                     <br/>
@@ -55,7 +65,7 @@ const AddTransaction = ({id, addTransaction}) => {
                     <input value="Credit" onChange={(event) => setType(event.target.value)} type="radio" id="Credit" name="transaction"/>
                     <label className={styles.green}>Credit</label>
                 </div>
-                <button onSubmit={onSubmit} type="submit" className={styles.submitBtn}>Add Transaction</button>
+                <button type="submit" className={styles.submitBtn}>Add Transaction</button>
             </form>
         </div>
     )
