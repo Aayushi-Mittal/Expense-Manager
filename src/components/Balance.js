@@ -9,8 +9,8 @@ const Balance = ({transactions}) => {
     const expenses = amount
       .filter((item) => item < 0)
       .reduce((acc, item) => acc + item, 0);
-    const expenseWidth = (40 + (expenses/(expenses+income))*100) + "%";
-    const incomeWidth = (40 + (income/(expenses+income))*100) + "%";
+    const expenseWidth = ((expenses/(expenses+income))*50) + "%";
+    const incomeWidth = ((income/(expenses+income))*50) + "%";
     document.querySelector(':root').style.setProperty('--expenseWidth', expenseWidth);
     document.querySelector(':root').style.setProperty('--incomeWidth', incomeWidth);
 
